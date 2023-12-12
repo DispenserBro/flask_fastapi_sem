@@ -10,9 +10,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    data = {
-        'name': 'Данил'
-    }
+    data = {'name': 'Данил'}
     return render_template('button.html', **data)
 
 
@@ -22,5 +20,5 @@ def greet(name: str):
     return render_template('name.html', context=name)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)

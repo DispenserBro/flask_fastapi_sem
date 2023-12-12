@@ -21,16 +21,16 @@ def index_post():
     num1 = request.form.get('num1')
     num2 = request.form.get('num2')
     symbol = request.form.get('symbol')
-    
+
     if symbol in '+-*/':
         result = eval(f'{num1}{symbol}{num2}')
     else:
         result = 'Ошибка!'
-    
+
     text = f'{num1} {symbol} {num2}'
-    
+
     return render_template('form.html', text=text, result=result)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)

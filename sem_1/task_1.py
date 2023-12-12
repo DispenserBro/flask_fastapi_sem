@@ -17,13 +17,13 @@ def index():
 
 @app.route('/about/')
 def about():
-    return 'That\'s page about company'
+    return "That's page about company"
 
 
 @app.route('/contact/')
 def contact():
     return 'Our contacts: company@mail.com'
-    
 
-if __name__ == "__main__":
+
+if __name__ == '__main__':
     app.run(debug=True)

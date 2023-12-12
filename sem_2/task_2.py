@@ -23,9 +23,9 @@ def form_get():
 def form_post():
     # image = request.files.get('file')
     # file_name = secure_filename(image.filename)
-    
+
     return redirect(url_for('index'))
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)

@@ -13,5 +13,5 @@ def index():
 <body><h1>Моя первая HTML страница</h1><p>Привет, мир!</p></body>'
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)

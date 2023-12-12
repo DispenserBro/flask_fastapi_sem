@@ -5,7 +5,6 @@
 # страницу приветствия пользователя или страницу с
 # ошибкой.
 
-from os import abort
 from flask import Flask, redirect, render_template, request, url_for
 
 
@@ -21,11 +20,9 @@ def index():
 def login():
     login = request.form.get('username')
     password = request.form.get('password')
-    
-    users_data = {
-        '123': ('admin', 'admin')
-    }
-    
+
+    users_data = {'123': ('admin', 'admin')}
+
     if (login, password) not in users_data.values():
         print('Invalid user data!')
         return redirect(url_for('index'))
@@ -37,5 +34,6 @@ def login():
 def login_success(name: str):
     return render_template('name.html', context=name)
 
-if __name__ == "__main__":
+
+if __name__ == '__main__':
     app.run(debug=True)

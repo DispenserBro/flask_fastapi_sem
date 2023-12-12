@@ -19,9 +19,9 @@ def index():
 def index_post():
     text = request.form.get('input')
     length = len(text.split())
-    
+
     return render_template('form.html', text=text, length=length)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)
