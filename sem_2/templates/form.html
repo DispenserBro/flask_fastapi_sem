@@ -2,9 +2,16 @@
 
 {% block content %}
 <div class="container m-3">
-    <form action="/form" method=post enctype="multipart/form-data">
-        <input type="file", name="file">
-        <input type="submit" value="Сохранить">
+    {% if text %}
+    <div class="container mb-3">
+        <p>Текст: {{ text }}</p>
+        <p>Кол-во слов: {{ length }}</p>
+    </div>
+    {% endif %}
+
+    <form method=post>
+        <input type="text", name="input">
+        <input type="submit" value="Отправить">
     </form>
 </div>
 {% endblock content %}
