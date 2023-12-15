@@ -1,4 +1,4 @@
-from sem_3.task_1 import app
+from sem_3.task_2 import app
 # from personal.example import app
 
 if __name__ == "__main__":
