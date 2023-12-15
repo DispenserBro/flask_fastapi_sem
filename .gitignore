@@ -1,3 +1,11 @@
+### Additions ###
+# Personal files and dirs
+personal/
+personal_*/
+personal.*
+pers_*.*
+
+
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
