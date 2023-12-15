@@ -9,7 +9,6 @@
 # студентов с указанием их факультета.
 
 from random import choice, randint
-from click import group
 from flask import Flask, render_template
 from .models_1 import Faculty, db, Student
 

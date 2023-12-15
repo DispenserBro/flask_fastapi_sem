@@ -11,7 +11,7 @@ class Faculty(db.Model):
 
     def __repr__(self) -> str:
         return f'Faculty({self.faculty_name})'
-    
+
     def __str__(self) -> str:
         return self.faculty_name
 
@@ -28,4 +28,5 @@ class Student(db.Model):
     )
 
     def __repr__(self) -> str:
-        return f'Student({self.name}, {self.last_name}, {self.age}, {self.gender}, {self.group})'
+        return f'Student({self.name}, {self.last_name}, {self.age}, \
+{self.gender}, {self.group})'
