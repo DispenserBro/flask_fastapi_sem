@@ -4,7 +4,7 @@
 # Используйте многопроцессорность.
 
 import os
-import threading
+import multiprocessing
 from pathlib import Path
 import time
 
@@ -18,21 +18,21 @@ def get_words_count(el: str):
         with open(os.path.join(BASE_DIR, el), encoding='utf-8') as f:
             words = 0
             for line in f:
-                words += len(line.strip().split(' '))
+                words += len(line.strip().split())
             print(f'File: {el}, words: {words}')
 
 
-threads: list[threading.Thread] = []
+processes: list[multiprocessing.Process] = []
 
+if __name__ == "__main__":
+    start_time = time.time()
 
-start_time = time.time()
+    for el in os.listdir(BASE_DIR):
+        process = multiprocessing.Process(target=get_words_count, args=[el])
+        processes.append(process)
+        process.start()
 
-for el in os.listdir(BASE_DIR):
-    thread = threading.Thread(target=get_words_count, args=[el])
-    threads.append(thread)
-    thread.start()
+    for process in processes:
+        process.join()
 
-for thread in threads:
-    thread.join()
-
-print(f'Completed work in {time.time()- start_time} seconds.')
+    print(f'Completed work in {time.time()- start_time} seconds.')
