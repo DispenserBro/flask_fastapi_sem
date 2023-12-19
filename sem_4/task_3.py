@@ -8,6 +8,7 @@ import os
 import aiohttp
 import asyncio
 from pathlib import Path
+import time
 
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -53,6 +54,9 @@ async def main():
     await asyncio.gather(*tasks)
 
 
+
 if __name__ == '__main__':
+    start_time = time.time()
     loop = asyncio.new_event_loop()
     loop.run_until_complete(main())
+    print(f'Completed download in {time.time()- start_time} seconds.')
