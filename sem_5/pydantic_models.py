@@ -15,3 +15,11 @@ class Movie(BaseModel):
     title: str
     description: str | None = None
     genre: str
+
+
+# Создайте класс User с полями id, name, email и password.
+class User(BaseModel):
+    id: int
+    name: str
+    email: str
+    password: str
