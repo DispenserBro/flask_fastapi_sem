@@ -23,7 +23,7 @@ from .pydantic_models import UserOnRegister, User
 from .sqlalchemy_models import Base, User as SUser
 
 
-DATABASE_URL = 'sqlite:///task_1.sqlite'
+DATABASE_URL = 'sqlite:///instance/task_1.sqlite'
 
 database = databases.Database(DATABASE_URL)
 engine = create_engine(DATABASE_URL, connect_args={'check_same_thread': False})
